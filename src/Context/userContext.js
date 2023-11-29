@@ -1,9 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-import {
-  doc,
-  getDoc,
-} from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../Firebase/Config";
 import { useNavigate } from "react-router-dom";
 // import { v4 as uuidv4 } from 'uuid';
@@ -36,12 +33,14 @@ export const ContextProivider = ({ children }) => {
           setUser(doc.data());
           if (doc.data().roles === "admin") {
             navigate("/admin");
+          } else if (doc.data().roles === "babyadmin") {
+            navigate("/babyadmin");
           } else {
             navigate("/");
           }
         });
         //If the account does not exist in the database => login
-      } else{
+      } else {
         setLoading(false);
         navigate("/login");
       }
@@ -50,7 +49,6 @@ export const ContextProivider = ({ children }) => {
       unsubcribe();
     };
   }, []);
-
   const contextValue = {
     user,
     loading,

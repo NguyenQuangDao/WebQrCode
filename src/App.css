@@ -1,8 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700;800&display=swap');
 
- *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+@font-face {
+  font-family: 'MyRoboto';
+  src: url('./asset/font/Roboto/Roboto-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MyPaytone';
+  src: url('./asset/font/Paytone_One/PaytoneOne-Regular.ttf') format('truetype');
+}
+
+.fontRobo {
+  font-family: "MyRoboto";
+}
+
+.fontRobo32 {
+  font-family: "MyRoboto";
+  font-size: 32px;
+}
+
+.fontRobo24 {
+  font-family: "MyRoboto";
+  font-size: 24px;
+}
+
+.fontRobo14 {
+  font-family: "MyRoboto";
+  font-size: 14px;
+}
+.fontRobo16{
+  font-family: "MyRoboto";
+  font-size: 16px;
+}
+.fontPaytone {
+  font-family: "MyPaytone";
+}
+
+.fontPaytone32 {
+  font-family: "MyPaytone";
+  font-size: 32px;
+}
+.fontPaytone16 {
+  font-family: "MyPaytone";
+  font-size: 16px;
+}
+.fontPaytone14 {
+  font-family: "MyPaytone";
+  font-size: 14px;
+}
+
+.textCenter {
+  text-align: center;
+}
+.mgt40{
+  margin-top: 40px;
+}
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   display: revert;
 }
+
 /* scroll bar*/
 ::-webkit-scrollbar {
   width: 6px;
@@ -27,6 +83,7 @@
   background: rgba(68, 68, 68, 0.5);
   border-radius: 10px;
 }
+
 /* Preferred box-sizing value */
 *,
 *::before,
@@ -34,48 +91,56 @@
   box-sizing: border-box;
 }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
-  }
-  
-  h1 {
-    font-size: 36px;
-  }
-  
-  h2 {
-    font-size: 30px;
-  }
-  
-  h3 {
-    font-size: 24px;
-  }
-  
-  h4 {
-    font-size: 18px;
-  }
-  
-  h5 {
-    font-size: 15px;
-  }
-  
-  h6 {
-    font-size: 13px;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+h6 {
+  font-size: 13px;
+}
 
 /* Reapply the pointer cursor for anchor tags */
-a, button {
+a,
+button {
   cursor: revert;
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
+ol,
+ul,
+menu {
   list-style: none;
 }
 
 /* For images to not be able to exceed their container */
 img {
   max-width: 100%;
-  
+
 }
 
 /* removes spacing between cells in tables */
@@ -84,7 +149,8 @@ table {
 }
 
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input, textarea {
+input,
+textarea {
   -webkit-user-select: auto;
 }
 

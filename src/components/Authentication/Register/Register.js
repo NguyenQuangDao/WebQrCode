@@ -52,6 +52,7 @@ function Register() {
           await setDoc(doc(db, "user", res.user.uid), {
             displayName,
             email: email,
+            password:password,
             uid: res.user.uid,
             timestamp: serverTimestamp(),
             roles: "user",
